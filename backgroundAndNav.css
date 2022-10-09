@@ -1,0 +1,36 @@
+
+/*background and navBar */
+body {
+    margin: 0;
+    padding: 0;
+    background: #ff3772;
+    font-family: sans-serif;
+}
+
+ul.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+
+
+  li.nav a {
+    display: block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  li.nav {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 24px 24px;
+    text-decoration: none;
+  }
+
+  /*background and navBar */
