@@ -14,7 +14,7 @@ function doSomethingElse(){
 $connectWallet.on('click', doSomething)
 
 
-$connectWallet.on('mouseover', function() {
+$connectWallet.on('click', function() {
 
     // Checking if Web3 has been injected by the browser (Mist/MetaMask)
     if (typeof web3 !== 'undefined') {
