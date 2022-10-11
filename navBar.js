@@ -1,8 +1,9 @@
+
 let $connectWallet = $('#connectWallet');
 let MetaMaskEnabled = false;
 
 async function walletConnector(){
-  return await ethereum.request({ method: 'eth_accounts'});
+  return await ethereum.request({ method: 'eth_requestAccounts'});
 }
 
 function connected(acc){
@@ -30,19 +31,13 @@ window.addEventListener('load', function() {
   
 $connectWallet.on('click', () => {
   if (MetaMaskEnabled === true){
-          
-  
     walletConnector().then((accounts) => {
-      window.alert(accounts[0]);
-
+      
       if(accounts && accounts[0] > 0){
         connected(accounts)
       } else {
-        window.alert(accounts[0]);
+        window.alert((accounts[0]));
       }
-     
     })
   }
 })
-
-
