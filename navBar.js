@@ -33,12 +33,12 @@ $connectWallet.on('click', () => {
           
   
     walletConnector().then((accounts) => {
-      window.alert(accounts[0])
+      window.alert(accounts[0]);
 
       if(accounts && accounts[0] > 0){
         connected(accounts)
       } else {
-        window.alert("Failure connecting account");
+        window.alert(accounts[0]);
       }
      
     })
