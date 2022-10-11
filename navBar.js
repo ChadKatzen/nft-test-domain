@@ -30,14 +30,17 @@ window.addEventListener('load', function() {
   
 $connectWallet.on('click', () => {
   if (MetaMaskEnabled === true){
-          window.alert(accounts[0])
-
+          
+  
     walletConnector().then((accounts) => {
+      window.alert(accounts[0])
+
       if(accounts && accounts[0] > 0){
         connected(accounts)
       } else {
         window.alert("Failure connecting account");
       }
+     
     })
   }
 })
