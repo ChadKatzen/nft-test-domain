@@ -1,26 +1,26 @@
-
 let $connectWallet = $('#connectWallet');
+let MetaMaskEnabled = false;
 
-
-function doSomething(){
-    window.alert("vagina");
-}
-function doSomethingElse(){
-  window.alert("penis");
+async function walletConnector(){
+  return await ethereum.request({ method: 'eth_accounts'});
 }
 
+function connected(acc){
+  $connectWallet.html(acc[0]);
+}
 
-$connectWallet.on('click', function() {
+window.addEventListener('load', function() {
 
     // Checking if Web3 has been injected by the browser (Mist/MetaMask)
     if (typeof web3 !== 'undefined') {
       // Use Mist/MetaMask's provider
       web3js = new Web3(web3.currentProvider);
-      doSomething();
+      $connectWallet.html("Connect Wallet");
+      MetaMaskEnabled = true;
     } else {
       // Handle the case where the user doesn't have Metamask installed
       // Probably show them a message prompting them to install Metamask
-      doSomethingElse();
+      MetaMaskEnabled = false;
     }
 
     // Now you can start your app & access web3 freely:
@@ -28,6 +28,16 @@ $connectWallet.on('click', function() {
 
   })
   
-
+$connectWallet.on('click', () => {
+  if (MetaMaskEnabled === true){
+    walletConnector().then((accounts) => {
+      if(accounts && accounts[0] > 0){
+        connected(accounts)
+      } else {
+        window.alert("Failure connecting account");
+      }
+    })
+  }
+})
 
 
