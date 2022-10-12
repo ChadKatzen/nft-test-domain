@@ -23,16 +23,11 @@ window.addEventListener('load', function() {
       // Probably show them a message prompting them to install Metamask
       MetaMaskEnabled = false;
     }
-
-    // Now you can start your app & access web3 freely:
-    //startApp()
-
   })
   
 $connectWallet.on('click', () => {
   if (MetaMaskEnabled === true){
     walletConnector().then((accounts) => {
-      
       if(accounts && accounts[0] > 0){
         connected(accounts)
       } else {
