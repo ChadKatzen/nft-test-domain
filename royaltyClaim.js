@@ -20,11 +20,16 @@ async function displayNFTs(){
         } catch (err) {
         }
     }
-    NFTsOwnedByAddress.forEach(getNFTimageURL).then(function (URL) {
+
+    counter = 1;
+    for (counter = 1; counter <= NFTsOwnedByAddress.length; counter++){
+        let URL = await getNFTimageURL(NFTsOwnedByAddress[counter]);
         $("#getNFTimage").append(`<div class="picture">
         <img src="${URL}">
-      </div>`)
-    })
+        </div>`)
+    }  
+   
+
 }
 let $getNFTs = $('#getNFTs');
 $getNFTs.on('click', displayNFTs);
