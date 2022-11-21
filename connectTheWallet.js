@@ -1,4 +1,5 @@
 
+let NFTcontract;
 let $connectWallet = $('#connectWallet');
 let MetaMaskEnabled = false;
 
@@ -6,9 +7,21 @@ async function walletConnector(){
   return await ethereum.request({ method: 'eth_requestAccounts'});
 }
 
-function connected(acc){
-  $connectWallet.html(acc[0]);
+function displayWallet(acc){
+  let text = acc[0];
+  let textStart = text.substring(0,5);
+  let textEnd = text.substring(text.lenght - 5,4)
+  $connectWallet.html(`${textStart}...${textEnd}`);
 }
+
+
+ function startApp(){
+  let NFTAddress = "0xFDbBaf165dD75C2963908189374BAf229485f8Ac";
+   NFTcontract = new web3js.eth.Contract(NFTABI, NFTAddress);
+}
+
+
+
 
 window.addEventListener('load', function() {
 
@@ -18,6 +31,7 @@ window.addEventListener('load', function() {
       web3js = new Web3(web3.currentProvider);
       $connectWallet.html("Connect Wallet");
       MetaMaskEnabled = true;
+      startApp();
     } else {
       // Handle the case where the user doesn't have Metamask installed
       // Probably show them a message prompting them to install Metamask
@@ -29,9 +43,7 @@ $connectWallet.on('click', () => {
   if (MetaMaskEnabled === true){
     walletConnector().then((accounts) => {
       if(accounts && accounts[0] > 0){
-        connected(accounts)
-      } else {
-        window.alert((accounts[0]));
+        displayWallet(accounts)
       }
     })
   }
