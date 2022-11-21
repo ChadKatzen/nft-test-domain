@@ -10,7 +10,7 @@ async function walletConnector(){
 function displayWallet(acc){
   let text = acc[0];
   let textStart = text.substring(0,5);
-  let textEnd = text.substring(text.lenght - 5,4)
+  let textEnd = text.substring(text.length - 5,4)
   $connectWallet.html(`${textStart}...${textEnd}`);
 }
 
