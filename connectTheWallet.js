@@ -38,12 +38,13 @@ window.addEventListener('load', function() {
       MetaMaskEnabled = false;
     }
   })
-  
+let activeAccount;
 $connectWallet.on('click', () => {
   if (MetaMaskEnabled === true){
     walletConnector().then((accounts) => {
       if(accounts && accounts[0] > 0){
         displayWallet(accounts)
+        activeAccount = accounts[0];
       }
     })
   }
