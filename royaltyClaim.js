@@ -20,6 +20,7 @@ async function displayNFTs(){
             NFTsOwnedByAddress.push(i);
         }
         } catch (err) {
+            let debugme =0;
         }
     }
 
