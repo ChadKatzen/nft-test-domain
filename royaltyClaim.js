@@ -15,8 +15,9 @@ async function displayNFTs(){
     for (i =1; i <= mintSupply; i++){
         try{
         let NFTaccount = await NFTcontract.methods.ownerOf(i).call();
-        let activeAccountString = string(activeAccount).toLowerCase();
-        if (activeAccountString == string(NFTaccount).toLowerCase()){
+        var NFTaccounthex = parseInt(NFTaccount.replace(/^#/, ''), 16);
+        let activeAccounthex = parseInt(activeAccount.replace(/^#/, ''), 16);
+        if (NFTaccounthex == activeAccounthex){
             NFTsOwnedByAddress.push(i);
         }
         } catch (err) {
