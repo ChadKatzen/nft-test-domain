@@ -7,6 +7,16 @@ async function getNFTimageURL(id){
     return imageURL;
 }
 
+async function getRoyaltyWithdrawable(id){
+    let amount = await NFTcontract.methods.royaltyClaimable(id).call();
+    return amount * (10**(-18);
+}
+
+async function claimDividend(amount, id){
+    let amountWei = amount * (10**18)
+    await NFTcontract.methods.withdrawRoyalty(amountWei, id).send();
+}
+
 
 async function displayNFTs(){
     let NFTsOwnedByAddress =[];
@@ -28,8 +38,12 @@ async function displayNFTs(){
     counter = 0;
     for (counter = 0; counter < NFTsOwnedByAddress.length; counter++){
         let URL = await getNFTimageURL(NFTsOwnedByAddress[counter]);
+        let withdrawAmountPossible = getRoyaltyWithdrawable(NFTsOwnedByAddress[counter]);
+
         $("#getNFTimage").append(`<div class="picture">
         <img src="${URL}">
+        <h1>Dividend Claimable: ${withdrawAmountPossible} eth</h1>
+        <button id='#${NFTsOwnedByAddress[counter]}claimDividend'>Claim Dividend</button>
         </div>`)
     }  
    
@@ -37,3 +51,4 @@ async function displayNFTs(){
 }
 let $getNFTs = $('#getNFTs');
 $getNFTs.on('click', displayNFTs);
+$('#1claimDividend').on('click', claimDividend(2000000,1));
