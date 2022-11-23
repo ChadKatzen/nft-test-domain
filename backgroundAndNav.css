@@ -33,4 +33,6 @@ ul.navbar {
     text-decoration: none;
   }
 
+  .hide {
+    display: none; }
   /*background and navBar */
