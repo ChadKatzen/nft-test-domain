@@ -5,6 +5,6 @@ async function mint(){
 
 }
 
-$mintButton=$('#mint');
+$mintButton=$('#mintButton');
 
 $mintButton.on('click', mint)
