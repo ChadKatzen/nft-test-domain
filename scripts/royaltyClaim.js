@@ -49,11 +49,11 @@ async function displayNFTs(){
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="titlepage text_align_left">
-                                            <h2>About Us</h2>
+                                            <h2>NFT # ${NFTsOwnedByAddress[counter]}</h2>
                                         </div>
                                         <div class="about_text">
-                                            <p>Dividend Claimable: ${withdrawAmountPossible} </p>
-                                            <a class="read_more" href="about.html">Read More</a>
+                                            <p>Dividend Claimable: ${withdrawAmountPossible} eth </p>
+                                            <a class="Claim Dividend" href="claim.html">Read More</a>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
