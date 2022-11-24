@@ -8,8 +8,13 @@ async function getNFTimageURL(id){
 }
 
 async function getRoyaltyWithdrawable(id){
+    try{
     let amount = await NFTcontract.methods.royaltyClaimable(id).call();
     return amount * (10**(-18));
+    }
+    catch (err){
+        return 0;
+    }
 }
 
 //async function claimDividend(amount, id){
