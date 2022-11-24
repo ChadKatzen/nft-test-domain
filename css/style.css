@@ -508,7 +508,7 @@ ul.email li i {
 }
 
 .about_border {
-     border: #ddd dashed 3px;
+     border: rgb(255, 255, 255) dashed 3px;
      padding: 80px 80px;
 }
 

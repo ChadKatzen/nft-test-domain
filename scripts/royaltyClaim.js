@@ -53,7 +53,7 @@ async function displayNFTs(){
                                         </div>
                                         <div class="about_text">
                                             <p>Dividend Claimable: ${withdrawAmountPossible} eth </p>
-                                            <a class="Claim Dividend" href="claim.html">Read More</a>
+                                            <a class="read_more" href="claim.html">Claim Dividend</a>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
