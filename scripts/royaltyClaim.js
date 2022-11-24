@@ -76,4 +76,3 @@ async function displayNFTs(){
 }
 let $getNFTs = $('#getNFTs');
 $getNFTs.on('click', displayNFTs);
-$('#1claimDividend').on('click', claimDividend(2000000,1));
