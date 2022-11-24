@@ -17,14 +17,14 @@ ul.navbar {
   
 
 
-  li.nav a {
+  li.nav1 a {
     display: block;
     color: white;
     text-align: center;
     text-decoration: none;
   }
 
-  li.nav {
+  li.nav1 {
     float: left;
     display: block;
     color: white;
