@@ -40,11 +40,36 @@ async function displayNFTs(){
         let URL = await getNFTimageURL(NFTsOwnedByAddress[counter]);
         let withdrawAmountPossible = await getRoyaltyWithdrawable(NFTsOwnedByAddress[counter]);
 
-        $("#getNFTimage").append(`<div class="picture">
-        <img src="${URL}">
-        <h1>Dividend Claimable: ${withdrawAmountPossible} eth</h1>
-        <button id='#${NFTsOwnedByAddress[counter]}claimDividend'>Claim Dividend</button>
-        </div>`)
+        $("#getNFTimage").append(
+            `<div id="about" class="about">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="about_border">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="titlepage text_align_left">
+                                            <h2>About Us</h2>
+                                        </div>
+                                        <div class="about_text">
+                                            <p>Dividend Claimable: ${withdrawAmountPossible} </p>
+                                            <a class="read_more" href="about.html">Read More</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="about_img">
+                                            <figure><img class="img_responsive" src="${URL}" alt="#" /></figure>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>`
+            
+            
+            )
     }  
    
 
