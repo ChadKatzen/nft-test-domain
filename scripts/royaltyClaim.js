@@ -19,7 +19,7 @@ async function getRoyaltyWithdrawable(id){
 
 async function claimDividend(amount, id){
    let amountWei = amount * (10**18)
-   let response = await NFTcontract.methods.withdrawRoyalty(amountWei, id).send({from: activeAccount});
+   let response = await NFTcontract.methods.withdrawRoyalty(amountWei, id).call();
 }
 
 
@@ -58,7 +58,7 @@ async function displayNFTs(){
                                         </div>
                                         <div class="about_text">
                                             <p>Dividend Claimable: ${withdrawAmountPossible} eth </p>
-                                            <a class="read_more" id="${NFTsOwnedByAddress[counter]}claim">Claim Dividend</a>
+                                            <p class="read_more" id="${NFTsOwnedByAddress[counter]}claim">Claim Dividend</p>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
