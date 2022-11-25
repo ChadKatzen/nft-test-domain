@@ -16,7 +16,7 @@ function displayWallet(acc){
 
 
  function startApp(){
-  let NFTAddress = "0xFDbBaf165dD75C2963908189374BAf229485f8Ac";
+  let NFTAddress = "0x7DAfAC25D7FF95f878B9bb08E9bA3fAEd5f72418";
    NFTcontract = new web3js.eth.Contract(NFTABI, NFTAddress);
 }
 
