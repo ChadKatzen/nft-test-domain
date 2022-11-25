@@ -27,7 +27,7 @@ async function displayNFTs(){
     let NFTsOwnedByAddress =[];
     let i = 1;
     let mintSupply = await NFTcontract.methods.TOTAL_SUPPLY().call();
-    for (i =1; i <= 4; i++){
+    for (i =1; i <= 10; i++){
         try{
         let NFTaccount = await NFTcontract.methods.ownerOf(i).call();
         var NFTaccounthex = parseInt(NFTaccount.replace(/^#/, ''), 16);
