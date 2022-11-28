@@ -18,8 +18,8 @@ async function getRoyaltyWithdrawable(id){
 }
 
 async function claimDividend(amount, id){
-   let amountWei = amount * (10**18)
-   let response = await NFTcontract.methods.withdrawRoyalty(0.01, 1).send({from: activeAccount});
+   let amountWei = amount * (10**18);
+   await NFTcontract.methods.withdrawRoyalty(amountWei, id).send({from: activeAccount});
 }
 
 
