@@ -20,7 +20,7 @@ async function getRoyaltyWithdrawable(id){
 async function claimDividend(event){
    let amount = event.data.key1;
    let id = event.data.key2;
-   await NFTcontract.methods.withdrawRoyalty(web3js.utils.parseEther(amount), id).send({from: activeAccount});
+   await NFTcontract.methods.withdrawRoyalty(web3js.utils.toWei(amount), id).send({from: activeAccount});
 }
 
 
@@ -74,7 +74,7 @@ async function displayNFTs(){
                 </div>
             </div>`
             );
-            $("#royaltyclaimscript").append(`<script>$('#${NFTsOwnedByAddress[counter]}claim').bind('click', {key1: "0.01", key2: 1}, claimDividend); </script>`)
+            $("#royaltyclaimscript").append(`<script>$('#${NFTsOwnedByAddress[counter]}claim').bind('click', {key1: '0.01', key2: 1}, claimDividend); </script>`)
     }  
    
 
