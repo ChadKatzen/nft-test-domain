@@ -66,16 +66,14 @@ async function displayNFTs(){
                                             <figure><img class="img_responsive" src="${URL}" alt="#" /></figure>
                                         </div>
                                     </div>
-                                    <script>$('#${NFTsOwnedByAddress[counter]}claim').on('click',claimDividend(0.01,1));</script>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>`
-            
-            
-            )
+            );
+            $("#royaltyclaimscript").append(`<script>$('#${NFTsOwnedByAddress[counter]}claim').on('click',claimDividend(0.01,1));</script>`)
     }  
    
 
