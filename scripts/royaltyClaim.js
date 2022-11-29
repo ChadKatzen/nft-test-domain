@@ -66,6 +66,7 @@ async function displayNFTs(){
                                             <figure><img class="img_responsive" src="${URL}" alt="#" /></figure>
                                         </div>
                                     </div>
+                                    <script>$('#${NFTsOwnedByAddress[counter]}claim').on('click',claimDividend(0.01,1));</script>
                                 </div>
                             </div>
                         </div>
@@ -81,4 +82,3 @@ async function displayNFTs(){
 }
 let $getNFTs = $('#getNFTs');
 $getNFTs.on('click', displayNFTs);
-$('#1claim').on('click',claimDividend(0.01,1));
