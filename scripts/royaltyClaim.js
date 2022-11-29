@@ -27,7 +27,7 @@ async function claimDividend(event){
 async function displayNFTs(){
     let NFTsOwnedByAddress =[];
     let i = 1;
-    let mintSupply = await NFTcontract.methods.amountMinted().call();
+    //let mintSupply = await NFTcontract.methods.amountMinted().call();
     for (i =1; i <= 10; i++){
         try{
         let NFTaccount = await NFTcontract.methods.ownerOf(i).call();
